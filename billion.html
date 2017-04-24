@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script use strict; type="text/javascript">
+        var DAYS = 30;
+        var DOUGH = Infinity;
+
+        // how much money would you get after given number of days
+        // of doublilng, starting at one cent at day one?
+        function howMuchDough(DAYS){
+            var dough = 0.01;
+            for (var i = 1; i <= DAYS; i++){
+                dough = dough*2;
+            }
+
+            //console.log("$" + dough + "!");
+            return dough;
+        }
+
+        // how many days would it take to get to given amount of money
+        // with each day doubling money starting at one cent at day one?
+        function howManyDays(DOUGH){
+            var days = 1;
+            while (howMuchDough(days) < DOUGH){
+                days++;
+            }
+            console.log(days);
+            return days;
+        }
+
+        howMuchDough(DAYS);
+        howManyDays(DOUGH);
+
+        //days to $10,000 = 20
+        //days to $1bn = 37
+        //days to Infinity = 1037
+    </script>
+</head>
+</html>
